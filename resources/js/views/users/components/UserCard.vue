@@ -1,17 +1,22 @@
 <template>
-  <el-card v-if="user.name">
-    <div class="user-profile">
-      <div class="user-avatar box-center">
-        <pan-thumb :image="user.avatar" :height="'100px'" :width="'100px'" :hoverable="false" />
-      </div>
-      <div class="box-center">
-        <div class="user-name text-center">
-          {{ user.name }}
+  <div>
+    <el-card v-if="user.name">
+      <div class="user-profile">
+        <div class="user-avatar box-center" style="float: left">
+          <pan-thumb :image="user.avatar" :height="'100px'" :width="'100px'" :hoverable="false" />
         </div>
-        <div class="user-role text-center text-muted">
-          {{ getRole() }}
+        <div class="box-center" style="float: left; margin-left: 30px; margin-top: 30px;">
+          <div class="user-name">
+            {{ user.name }}
+          </div>
+          <div class="user-role text-muted">
+            {{ user.email }}
+          </div>
         </div>
+        <div style="clear: both"></div>
       </div>
+    </el-card>
+    <el-card style="margin-top: 20px;">
       <div class="box-social">
         <el-table :data="social" :show-header="false">
           <el-table-column prop="name" label="Name" />
@@ -22,13 +27,8 @@
           </el-table-column>
         </el-table>
       </div>
-      <div class="user-follow">
-        <el-button type="primary" style="width: 100%;">
-          Follow
-        </el-button>
-      </div>
-    </div>
-  </el-card>
+    </el-card>
+  </div>
 </template>
 
 <script>

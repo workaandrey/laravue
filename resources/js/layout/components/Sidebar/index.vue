@@ -26,6 +26,7 @@ export default {
       'permission_routers',
     ]),
     routes() {
+      console.log(this.$store.state.user)
       return this.$store.state.permission.routes;
     },
     isCollapse() {

@@ -81,6 +81,7 @@ export const constantRoutes = [
   },
   {
     path: '',
+    isVisible: true,
     component: Layout,
     redirect: 'dashboard',
     children: [
